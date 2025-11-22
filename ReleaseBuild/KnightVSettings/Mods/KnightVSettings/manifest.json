@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/ToniMacaroni/RedLoader/main/MetadataSchema.json",
+  "id": "KnightVSettings",
+  "author": "MonsieurMeh",
+  "version": "1.0.0",
+  "description": "Exposes fun settings for the KnightV. Inspired by KnightVUpgrade by Ajaah.",
+  "gameVersion": "1.0.0",
+  "type": "Mod",
+  "url": "..."
+}

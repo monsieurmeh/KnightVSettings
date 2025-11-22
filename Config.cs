@@ -6,6 +6,7 @@ namespace KnightVSettings;
 public static class Config
 {
     public static ConfigCategory Category { get; private set; }
+    public static ConfigEntry<bool> DebugOutput { get; private set; }
     public static ConfigEntry<float> MaxVelocity { get; private set; }
     public static ConfigEntry<float> MaxPowerUsage { get; private set; }
     public static ConfigEntry<float> WipeoutMinVelocity { get; private set; }
@@ -43,13 +44,13 @@ public static class Config
         MaxVelocity = Category.CreateEntry("MaxVelocity", 20f, "Max Speed", "Sets maximum speed.");
         MaxPowerUsage = Category.CreateEntry("MaxPowerUsage", 0f, "Power Usage", "Sets power usage over time");
         WipeoutMinVelocity = Category.CreateEntry("WipeoutMinVelocity", 1000f, "Wipeout Speed", "Sets minimum speed before wipeout occurs.");
-        AccelerationInputRate = Category.CreateEntry("AccelerationInputRate", 0f, "Rate of Acceleration", "Sets the rate at which acceleration increases or decreases when starting or stopping movement input.");
+        AccelerationInputRate = Category.CreateEntry("AccelerationInputRate", 500f, "Rate of Acceleration", "Rate acceleration rises/falls when input changes.");
         MaxForwardAcceleration = Category.CreateEntry("MaxForwardAcceleration", 15f, "Max Forward Acceleration", "Sets maximum forward acceleration.");
         MaxReverseAcceleration = Category.CreateEntry("MaxReverseAcceleration", 15f, "Max Reverse Acceleration", "Sets maximum backward acceleration.");
         SlopeHelpMultiplier = Category.CreateEntry("SlopeHelpMultiplier", 1f, "Slope Assistance", "Multiplier affecting slope movement assistance.");
         LookXRange = Category.CreateEntry("LookXRange", 135f, "Horizontal Look Range", "Maximum allowed horizontal look angle.");
         LookYRange = Category.CreateEntry("LookYRange", 120f, "Vertical Look Range", "Maximum allowed vertical look angle.");
-        JumpForce = Category.CreateEntry("JumpForce", 10f, "Jump Force", "Force applied when jumping.");
+        JumpForce = Category.CreateEntry("JumpForce", 8f, "Jump Force", "Force applied when jumping.");
         JumpDelay = Category.CreateEntry("JumpDelay", 0.25f, "Jump Delay", "Delay before jump triggers.");
         LeanInputRate = Category.CreateEntry("LeanInputRate", 7f, "Lean Input Rate", "Rate at which leaning input is applied.");
         LeanFade = Category.CreateEntry("LeanFade", 4.5f, "Lean Fade", "How quickly lean input fades when input stops.");
@@ -61,6 +62,7 @@ public static class Config
         LeanForwardBackwardBlendSmoothing = Category.CreateEntry("LeanForwardBackwardBlendSmoothing", 2f, "Forward Lean Smoothing", "Smoothing factor for forward/backward lean animation blending.");
         LeanForwardBackwardBlendMinMax = Category.CreateEntry("LeanForwardBackwardBlendMinMax", 0.6f, "Forward Lean Range", "Min/max values used for forward/backward lean blending.");
         WaterLevelDismountThreshold = Category.CreateEntry("WaterLevelDismountThreshold", 10f, "Water Dismount Level", "Depth of water at which dismount occurs.");
+        DebugOutput = Category.CreateEntry("DebugOutput", false, "Debug Output", "Logs debug output to console");
     }
 
     private static void SetConfigRanges()
@@ -68,13 +70,13 @@ public static class Config
         MaxVelocity.SetRange(1f, 1000f);
         MaxPowerUsage.SetRange(0f, 100f);
         WipeoutMinVelocity.SetRange(0f, 1000f);
-        AccelerationInputRate.SetRange(0f, 50f);
+        AccelerationInputRate.SetRange(250f, 2500f);
         MaxForwardAcceleration.SetRange(0f, 200f);
         MaxReverseAcceleration.SetRange(0f, 200f);
         SlopeHelpMultiplier.SetRange(-5f, 5f);
         LookXRange.SetRange(30f, 360f);
         LookYRange.SetRange(30f, 180f);
-        JumpForce.SetRange(0f, 100f);
+        JumpForce.SetRange(0f, 500f);
         JumpDelay.SetRange(0f, 2f);
         LeanInputRate.SetRange(0f, 20f);
         LeanFade.SetRange(0f, 20f);
