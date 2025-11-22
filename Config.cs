@@ -34,6 +34,12 @@ public static class Config
     public static void Init()
     {
         Category = ConfigSystem.CreateFileCategory("KnightVSettings", "Knight V Settings", "KnightVSettings.cfg");
+        InstantiateConfigs();
+        SetConfigRanges();
+    }
+
+    private static void InstantiateConfigs()
+    {
         MaxVelocity = Category.CreateEntry("MaxVelocity", 20f, "Max Speed", "Sets maximum speed.");
         MaxPowerUsage = Category.CreateEntry("MaxPowerUsage", 0f, "Power Usage", "Sets power usage over time");
         WipeoutMinVelocity = Category.CreateEntry("WipeoutMinVelocity", 1000f, "Wipeout Speed", "Sets minimum speed before wipeout occurs.");
@@ -55,27 +61,29 @@ public static class Config
         LeanForwardBackwardBlendSmoothing = Category.CreateEntry("LeanForwardBackwardBlendSmoothing", 2f, "Forward Lean Smoothing", "Smoothing factor for forward/backward lean animation blending.");
         LeanForwardBackwardBlendMinMax = Category.CreateEntry("LeanForwardBackwardBlendMinMax", 0.6f, "Forward Lean Range", "Min/max values used for forward/backward lean blending.");
         WaterLevelDismountThreshold = Category.CreateEntry("WaterLevelDismountThreshold", 10f, "Water Dismount Level", "Depth of water at which dismount occurs.");
+    }
 
-
+    private static void SetConfigRanges()
+    {
         MaxVelocity.SetRange(1f, 1000f);
         MaxPowerUsage.SetRange(0f, 100f);
-        WipeoutMinVelocity.SetRange(0f, 1000f);              
-        AccelerationInputRate.SetRange(0f, 50f);             
-        MaxForwardAcceleration.SetRange(0f, 200f);           
-        MaxReverseAcceleration.SetRange(0f, 200f);           
-        SlopeHelpMultiplier.SetRange(-5f, 5f);       
-        LookXRange.SetRange(30f, 360f);                      
-        LookYRange.SetRange(30f, 180f);        
-        JumpForce.SetRange(0f, 100f);                       
-        JumpDelay.SetRange(0f, 2f);           
-        LeanInputRate.SetRange(0f, 20f);                     
-        LeanFade.SetRange(0f, 20f);                          
-        LeanVelocityReduction.SetRange(0f, 5f);              
-        MinMaxLean.SetRange(0f, 45f);                        
-        LeanVelocityThreshold.SetRange(0f, 100f);          
-        LeanRightLeftBlendSmoothing.SetRange(0f, 10f);       
-        LeanRightLeftBlendMinMax.SetRange(0f, 5f);          
-        LeanForwardBackwardBlendSmoothing.SetRange(0f, 10f); 
+        WipeoutMinVelocity.SetRange(0f, 1000f);
+        AccelerationInputRate.SetRange(0f, 50f);
+        MaxForwardAcceleration.SetRange(0f, 200f);
+        MaxReverseAcceleration.SetRange(0f, 200f);
+        SlopeHelpMultiplier.SetRange(-5f, 5f);
+        LookXRange.SetRange(30f, 360f);
+        LookYRange.SetRange(30f, 180f);
+        JumpForce.SetRange(0f, 100f);
+        JumpDelay.SetRange(0f, 2f);
+        LeanInputRate.SetRange(0f, 20f);
+        LeanFade.SetRange(0f, 20f);
+        LeanVelocityReduction.SetRange(0f, 5f);
+        MinMaxLean.SetRange(0f, 45f);
+        LeanVelocityThreshold.SetRange(0f, 100f);
+        LeanRightLeftBlendSmoothing.SetRange(0f, 10f);
+        LeanRightLeftBlendMinMax.SetRange(0f, 5f);
+        LeanForwardBackwardBlendSmoothing.SetRange(0f, 10f);
         LeanForwardBackwardBlendMinMax.SetRange(0f, 5f);
         WaterLevelDismountThreshold.SetRange(0f, 50f);
     }
