@@ -43,7 +43,7 @@ public static class Config
         SlopeHelpMultiplier = Category.CreateEntry("SlopeHelpMultiplier", 1f, "Slope Assistance", "Multiplier affecting slope movement assistance.");
         LookXRange = Category.CreateEntry("LookXRange", 135f, "Horizontal Look Range", "Maximum allowed horizontal look angle.");
         LookYRange = Category.CreateEntry("LookYRange", 120f, "Vertical Look Range", "Maximum allowed vertical look angle.");
-        JumpForce = Category.CreateEntry("JumpForce", 1000f, "Jump Force", "Force applied when jumping.");
+        JumpForce = Category.CreateEntry("JumpForce", 10f, "Jump Force", "Force applied when jumping.");
         JumpDelay = Category.CreateEntry("JumpDelay", 0.25f, "Jump Delay", "Delay before jump triggers.");
         LeanInputRate = Category.CreateEntry("LeanInputRate", 7f, "Lean Input Rate", "Rate at which leaning input is applied.");
         LeanFade = Category.CreateEntry("LeanFade", 4.5f, "Lean Fade", "How quickly lean input fades when input stops.");
@@ -55,6 +55,29 @@ public static class Config
         LeanForwardBackwardBlendSmoothing = Category.CreateEntry("LeanForwardBackwardBlendSmoothing", 2f, "Forward Lean Smoothing", "Smoothing factor for forward/backward lean animation blending.");
         LeanForwardBackwardBlendMinMax = Category.CreateEntry("LeanForwardBackwardBlendMinMax", 0.6f, "Forward Lean Range", "Min/max values used for forward/backward lean blending.");
         WaterLevelDismountThreshold = Category.CreateEntry("WaterLevelDismountThreshold", 10f, "Water Dismount Level", "Depth of water at which dismount occurs.");
+
+
+        MaxVelocity.SetRange(1f, 1000f);
+        MaxPowerUsage.SetRange(0f, 100f);
+        WipeoutMinVelocity.SetRange(0f, 1000f);              
+        AccelerationInputRate.SetRange(0f, 50f);             
+        MaxForwardAcceleration.SetRange(0f, 200f);           
+        MaxReverseAcceleration.SetRange(0f, 200f);           
+        SlopeHelpMultiplier.SetRange(-5f, 5f);       
+        LookXRange.SetRange(30f, 360f);                      
+        LookYRange.SetRange(30f, 180f);        
+        JumpForce.SetRange(0f, 100f);                       
+        JumpDelay.SetRange(0f, 2f);           
+        LeanInputRate.SetRange(0f, 20f);                     
+        LeanFade.SetRange(0f, 20f);                          
+        LeanVelocityReduction.SetRange(0f, 5f);              
+        MinMaxLean.SetRange(0f, 45f);                        
+        LeanVelocityThreshold.SetRange(0f, 100f);          
+        LeanRightLeftBlendSmoothing.SetRange(0f, 10f);       
+        LeanRightLeftBlendMinMax.SetRange(0f, 5f);          
+        LeanForwardBackwardBlendSmoothing.SetRange(0f, 10f); 
+        LeanForwardBackwardBlendMinMax.SetRange(0f, 5f);
+        WaterLevelDismountThreshold.SetRange(0f, 50f);
     }
 
     public static void OnSettingsUiClosed()

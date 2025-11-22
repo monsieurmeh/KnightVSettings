@@ -30,6 +30,7 @@ namespace KnightVSettings
             __instance._controlDefinition.LeanForwardBackwardBlendSmoothing = Config.LeanForwardBackwardBlendSmoothing.Value;
             __instance._controlDefinition.LeanForwardBackwardBlendMinMax = Config.LeanForwardBackwardBlendMinMax.Value;
             __instance._controlDefinition.WaterLevelDismountThreshold = Config.WaterLevelDismountThreshold.Value;
+            __instance._controlDefinition.WaterLevelDismountThreshold = Config.WaterLevelDismountThreshold.Value;
 
         }
     }
